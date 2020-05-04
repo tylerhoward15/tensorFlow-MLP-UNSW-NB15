@@ -26,8 +26,9 @@ X_test = encoded_dataset[:, :-1]
 y_test = np.ravel(encoded_dataset[:, -1:])
 
 
+input_dim = X_train.shape[1]
 model = Sequential()
-model.add(Dense(64, input_dim=44, activation='relu'))
+model.add(Dense(64, input_dim=input_dim, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
